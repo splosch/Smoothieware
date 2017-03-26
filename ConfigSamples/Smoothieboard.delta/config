@@ -15,15 +15,25 @@ delta_segments_per_second                    100              # For deltas only,
 
 # Arm solution configuration : Cartesian robot. Translates mm positions into stepper positions
 # See http://smoothieware.org/stepper-motors
-alpha_steps_per_mm                           100              # Steps per mm for alpha ( X ) stepper and tower
-beta_steps_per_mm                            100              # Steps per mm for beta ( Y ) stepper and tower
-gamma_steps_per_mm                           100              # Steps per mm for gamma ( Z ) stepper and tower
+# taken from Marlin config
+#define XYZ_FULL_STEPS_PER_ROTATION 200
+#define XYZ_MICROSTEPS 16
+#define XYZ_BELT_PITCH 2
+#define XYZ_PULLEY_TEETH 20
+#define XYZ_STEPS ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
+#define E_STEPS_PER_MM 95 // steps per mm
+
+alpha_steps_per_mm                           80               # Steps per mm for alpha ( X ) stepper and tower
+beta_steps_per_mm                            80               # Steps per mm for beta ( Y ) stepper and tower
+gamma_steps_per_mm                           80               # Steps per mm for gamma ( Z ) stepper and tower
 
 # Delta configuration
 # See http://smoothieware.org/delta
 arm_solution                                 linear_delta     # Selects the linear delta arm solution
-arm_length                                   250.0            # This is the length of an arm from hinge to hinge
-arm_radius                                   124.0            # This is the horizontal distance from hinge to hinge when the effector is centered
+arm_length                                   273.5            # This is the length of an arm from hinge to hinge
+                                                              # = DELTA_DIAGONAL_ROD in Marlin
+arm_radius                                   127.5            # This is the horizontal distance from hinge to hinge when the effector is centered
+                                                              # = DELTA_RADIUS in Marlin
 
 # Planner module configuration : Look-ahead and acceleration configuration
 # See http://smoothieware.org/motion-control
@@ -61,7 +71,7 @@ gamma_max_rate                               30000.0          # Maximum rate in 
 ## Extruder module configuration
 # See http://smoothieware.org/extruder
 extruder.hotend.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
-extruder.hotend.steps_per_mm                    140           # Steps per mm for extruder stepper
+extruder.hotend.steps_per_mm                    95            # Steps per mm for extruder stepper
 extruder.hotend.default_feed_rate               600           # Default rate ( mm/minute ) for moves where only the extruder moves
 extruder.hotend.acceleration                    500           # Acceleration for the stepper motor mm/sec²
 extruder.hotend.max_speed                       50            # Maximum speed in mm/s
