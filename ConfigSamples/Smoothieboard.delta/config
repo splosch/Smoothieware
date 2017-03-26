@@ -149,9 +149,9 @@ temperature_control.hotend.designator        T                # Designator lette
 
 # PID configuration
 # See http://smoothieware.org/temperaturecontrol#pid
-#temperature_control.hotend.p_factor         13.7             # P ( proportional ) factor
-#temperature_control.hotend.i_factor         0.097            # I ( integral ) factor
-#temperature_control.hotend.d_factor         24               # D ( derivative ) factor
+#temperature_control.hotend.p_factor         21.07            # P ( proportional ) factor
+#temperature_control.hotend.i_factor         1.71             # I ( integral ) factor
+#temperature_control.hotend.d_factor         64.72            # D ( derivative ) factor
 
 #temperature_control.hotend.max_pwm          64               # Max pwm, 64 is a good value if driving a 12v resistor with 24v.
 
