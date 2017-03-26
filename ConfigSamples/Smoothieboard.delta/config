@@ -43,11 +43,11 @@ junction_deviation                           0.05             # See http://smoot
 #z_junction_deviation                        0.0              # For Z only moves, -1 uses junction_deviation, zero disables junction_deviation on z moves DO NOT SET ON A DELTA
 
 # Cartesian axis speed limits
-x_axis_max_speed                             30000            # Maximum speed in mm/min
-y_axis_max_speed                             30000            # Maximum speed in mm/min
-z_axis_max_speed                             30000            # Maximum speed in mm/min
+x_axis_max_speed                             10000            # Maximum speed in mm/min
+y_axis_max_speed                             10000            # Maximum speed in mm/min
+z_axis_max_speed                             10000            # Maximum speed in mm/min
 
-# Stepper module configuration 
+# Stepper module configuration
 # Pins are defined as  ports, and pin numbers, appending "!" to the number will invert a pin
 # See http://smoothieware.org/pin-configuration and http://smoothieware.org/pinout
 alpha_step_pin                               2.0              # Pin for alpha stepper step signal
