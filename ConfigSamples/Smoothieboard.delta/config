@@ -30,9 +30,9 @@ gamma_steps_per_mm                           160                 # Steps per mm 
 # Delta configuration
 # See http://smoothieware.org/delta
 arm_solution                                 linear_delta     # Selects the linear delta arm solution
-arm_length                                   273.5            # This is the length of an arm from hinge to hinge
+arm_length                                   269              # This is the length of an arm from hinge to hinge
                                                               # = DELTA_DIAGONAL_ROD in Marlin
-arm_radius                                   127.5            # This is the horizontal distance from hinge to hinge when the effector is centered
+arm_radius                                   131.4            # This is the horizontal distance from hinge to hinge when the effector is centered
                                                               # = DELTA_RADIUS in Marlin
 
 # Planner module configuration : Look-ahead and acceleration configuration
