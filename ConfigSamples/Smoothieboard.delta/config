@@ -23,9 +23,9 @@ delta_segments_per_second                    100              # For deltas only,
 #define XYZ_STEPS ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
 #define E_STEPS_PER_MM 95 // steps per mm
 
-alpha_steps_per_mm                           80               # Steps per mm for alpha ( X ) stepper and tower
-beta_steps_per_mm                            80               # Steps per mm for beta ( Y ) stepper and tower
-gamma_steps_per_mm                           80               # Steps per mm for gamma ( Z ) stepper and tower
+alpha_steps_per_mm                           160                 # Steps per mm for alpha ( X ) stepper and tower
+beta_steps_per_mm                            160                 # Steps per mm for beta ( Y ) stepper and tower
+gamma_steps_per_mm                           160                 # Steps per mm for gamma ( Z ) stepper and tower
 
 # Delta configuration
 # See http://smoothieware.org/delta
