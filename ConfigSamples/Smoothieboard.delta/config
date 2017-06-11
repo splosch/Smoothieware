@@ -241,11 +241,11 @@ beta_max_travel                              300             # Max travel in mm 
 gamma_max_travel                             300             # Max travel in mm for gamma/Z axis when homing
 
 # Endstops home at their fast feedrate first, then once the endstop is found they home again at their slow feedrate for accuracy
-alpha_fast_homing_rate_mm_s                  200              # Alpha tower fast homing feedrate in mm/second
+alpha_fast_homing_rate_mm_s                  100              # Alpha tower fast homing feedrate in mm/second
 alpha_slow_homing_rate_mm_s                  20               # Alpha tower slow homing feedrate in mm/second
-beta_fast_homing_rate_mm_s                   200              # Beta  tower fast homing feedrate in mm/second
+beta_fast_homing_rate_mm_s                   100              # Beta  tower fast homing feedrate in mm/second
 beta_slow_homing_rate_mm_s                   20               # Beta  tower slow homing feedrate in mm/second
-gamma_fast_homing_rate_mm_s                  200              # Gamma tower fast homing feedrate in mm/second
+gamma_fast_homing_rate_mm_s                  100              # Gamma tower fast homing feedrate in mm/second
 gamma_slow_homing_rate_mm_s                  20               # Gamma tower slow homing feedrate in mm/second
 
 alpha_homing_retract_mm                      5                # Distance to retract from the endstop after it is hit for alpha/X
