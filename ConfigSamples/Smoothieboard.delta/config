@@ -30,9 +30,9 @@ gamma_steps_per_mm                           160                 # Steps per mm 
 # Delta configuration
 # See http://smoothieware.org/delta
 arm_solution                                 linear_delta     # Selects the linear delta arm solution
-arm_length                                   269              # This is the length of an arm from hinge to hinge
+arm_length                                   269.5              # This is the length of an arm from hinge to hinge
                                                               # = DELTA_DIAGONAL_ROD in Marlin
-arm_radius                                   131.4            # This is the horizontal distance from hinge to hinge when the effector is centered
+arm_radius                                   127              # This is the horizontal distance from hinge to hinge when the effector is centered
                                                               # = DELTA_RADIUS in Marlin
 
 # Planner module configuration : Look-ahead and acceleration configuration
@@ -218,6 +218,7 @@ switch.fan.output_type                       pwm              # PWM output setta
 # See http://smoothieware.org/endstops
 endstops_enable                              true             # The endstop module is enabled by default and can be disabled here
 delta_homing                                 true             # Forces all three axis to home a the same time regardless of what is specified in G28
+
 alpha_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
 alpha_max_endstop                            1.24^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 alpha_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
@@ -233,10 +234,10 @@ beta_limit_enable                            true             # If set to true, 
 gamma_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
 gamma_max_endstop                            1.28^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 gamma_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
-gamma_max                                    300              # This gets loaded as the current position after homing when home_to_max is set
+gamma_max                                    239.7            # This gets loaded as the current position after homing when home_to_max is set
 gamma_limit_enable                           true             # If set to true, the machine will stop if one of the gamma ( Z axis or gamma tower ) endstops are hit
 
-alpha_max_travel                             300             # Max travel in mm for alpha/X axis when homing
+alpha_max_travel                             300            # Max travel in mm for alpha/X axis when homing
 beta_max_travel                              300             # Max travel in mm for beta/Y axis when homing
 gamma_max_travel                             300             # Max travel in mm for gamma/Z axis when homing
 
@@ -258,9 +259,9 @@ gamma_homing_retract_mm                      5                # Distance to retr
 #endstop_debounce_ms                          1                # Uncomment if you get noise on your endstops, default is 1 millisecond debounce
 
 # Endstop trim options
-alpha_trim                                    0                # Software trim for alpha stepper endstop (in mm)
-beta_trim                                     0                # Software trim for beta stepper endstop (in mm)
-gamma_trim                                    0                # Software trim for gamma stepper endstop (in mm)
+alpha_trim                                    -0.5                # Software trim for alpha stepper endstop (in mm)
+beta_trim                                     0.5                # Software trim for beta stepper endstop (in mm)
+gamma_trim                                    -0.4                # Software trim for gamma stepper endstop (in mm)
 
 # End of endstop config
 # Delete the above endstop section and uncomment next line and copy and edit Snippets/abc-endstop.config file to enable endstops for ABC axis
@@ -326,6 +327,10 @@ panel.bed_temperature                       60                # Temp to set bed 
 
 ## Custom menus : Example of a custom menu entry, which will show up in the Custom entry.
 # NOTE _ gets converted to space in the menu and commands, | is used to separate multiple commands
+custom_menu.goto_bed_center.enable          true              #
+custom_menu.goto_bed_center.name            Goto_X0_Y0_Z1.5   #
+custom_menu.goto_bed_center.command         G28|G1_X0_Y0_Z1.5 #
+
 custom_menu.power_on.enable                 true              #
 custom_menu.power_on.name                   Power_on          #
 custom_menu.power_on.command                M80               #
